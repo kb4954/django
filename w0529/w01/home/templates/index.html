@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+</head>
+<body>
+    <h2>메인페이지</h2>
+    {# html href / , ./ , ../#}
+    {# html href / : 루트 디렉토리#}
+    {# html href ./ : 현재 디렉토리#}
+    {# html href ../ : 이전 디렉토리#}
+    <ul> 
+        <li><a href='/admin'>관리자페이지</a></li>
+        <li><a href='/students/list/'>학생리스트</a></li>
+        <li><a href='/students/write/'>학생등록페이지</a></li>
+        <li><a href='/students/update/'>학생수정페이지</a></li>
+        {# 데이터 전달방법 html-> server #}
+        {# 파라미터로 했을경우는 뒤에 /를 붙이지 않음 ex)/students/list/?name=1 #}
+        {# 그 외에는 꼭 붙여야함(우아한 url : api 방식 뒤에 / 붙임 ex)/students/list/1/ #}
+    </ul>
+</body>
+</html>
