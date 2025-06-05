@@ -1,14 +1,43 @@
 from django.shortcuts import render,redirect
 from board.models import Board
-from django.db.models import F # 검색된것에서 특정한 열을 가져올 수 있음 
+from django.db.models import F,Q 
+# F : 검색된것에서 특정한 열을 가져올 수 있음 
+# Q : end or not 등 연산자를 사용할때
+from django.core.paginator import Paginator # 페이지를 분기하는 명령어
 
-# 게시판 리스트
+
+# 게시판 리스트 - 일반게시판 리스트, 검색게시판리스트
 def list(request):
-    # 게시글 전체 가져오기
-    qs = Board.objects.order_by('-bgroup','bstep') # 같은게 있을때만 bstep으로 조정함
-    context = {'list':qs}
-    
-    return render(request,'board/list.html',context)
+    # ㅎ현재 페이지 int 병경
+    page = int(request.GET.get('page', 1)) # 없을 때 1페이지로 넘겨줌
+    # serach
+    search = request.GET.get('search','')
+    category = request.GET.get('category','')
+    print("검색데이터 : ", category, search)
+    if search == '':
+        # 게시글 전체 가져오기
+        qs = Board.objects.order_by('-bgroup', 'bstep')
+        # 페이지 분기
+        paginator = Paginator(qs, 20)
+        list = paginator.get_page(page)
+        context = {"list":list, 'page':page}
+        return render(request, 'board/list.html', context)
+    else: # 검색으로 넘어온 경우
+        # 게시글 전체 가져오기
+        if category == 'all':
+            qs = Board.objects.filter(
+                Q(btitle__contains=search) | Q(bcontent__contains=search))
+        elif category == 'btitle':
+            qs = Board.objects.filter(btitle__contains=search)
+        else:
+            qs = Board.objects.filter(bcontent__contains=search)
+        # 페이지 분기
+        paginator = Paginator(qs, 20)
+        list = paginator.get_page(page)
+        context = {"list":list, 'page':page, 'search':search, 'category':category}
+        return render(request, 'board/list.html', context)
+
+
 
 # 게시글 보기
 def view(request,bno):
@@ -16,10 +45,13 @@ def view(request,bno):
     # qs.bhit += 1
     # qs.save()
     # 2. F함수 사용 : 필터로 가져와야 적용됨.
+    category= request.GET.get('category','')
+    search= request.GET.get('search','')
+    
     qs = Board.objects.filter(bno=bno)
     qs.update(bhit =F('bhit')+1) # save까지 됨.
     
-    context = {'board':qs[0]}
+    context = {'board':qs[0],'category':category,'search':search }
     return render(request,'board/view.html',context)
 
 # 게시글 쓰기
@@ -31,8 +63,10 @@ def write(request):
         id = request.POST.get('id') # 섹션에서 가져옴
         btitle = request.POST.get('btitle')
         bcontent = request.POST.get('bcontent')
-        bfile = request.POST.get('bfile')
-        print("가져온 데이터 : ",id,btitle,bcontent,bfile)
+        # bfile = request.POST.get('bfile')
+        bfile = request.FILES.get('bfile','')
+        print("파일부분 : ",request.FILES)
+        print("write가져온 데이터 : ",bfile)
         # 데이터 저장
         # 방법 1
         # Board(id=id,btitle=btitle,bcontent=bcontent,bfile=bfile).save()
@@ -52,7 +86,10 @@ def update(request,bno):
     elif request.method == 'POST':
         btitle = request.POST.get('btitle')
         bcontent = request.POST.get('bcontent')
-        bfile = request.POST.get('bfile')
+        bfile_pre = request.POST.get('bfile_pre','')
+        bfile = request.FILES.get('bfile','')
+        if not bfile:
+            bfile = bfile_pre
         qs = Board.objects.get(bno=bno)
         qs.btitle = btitle
         qs.bcontent = bcontent
@@ -82,7 +119,7 @@ def reply(request,bno):
         bindent = int(request.POST.get('bindent')) # 부모의 bindent
         btitle = request.POST.get('btitle')
         bcontent = request.POST.get('bcontent')
-        bfile = request.POST.get('bfile')
+        bfile = request.FILES.get('bfile')
         
         ## 답글달기 저장
         # 1. gt, lt, gte, lte
