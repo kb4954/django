@@ -2,7 +2,7 @@ from django.db import models
 from member.models import Member
 class Board(models.Model):
     bno = models.AutoField(primary_key=True)
-    id = models.CharField(max_length=100)   # 작성자
+    id = models.CharField(max_length=100, null=True)   # 작성자
     # 외래키 (Foreign Key)
     member = models.ForeignKey(Member,on_delete=models.SET_NULL, null=True) # DO_NOTHING: 어떤것도 관여하지않는다.
     # member = models.ForeignKey(Member,on_delete=models.CASCADE) # CASCADE: 회원탈퇴시 모두 삭제 , SET_NULL, null=True : 회원탈퇴시 널값을 집어넣음

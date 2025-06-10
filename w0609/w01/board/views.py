@@ -1,5 +1,7 @@
 from django.shortcuts import render
-
+from board.models import Board
 
 def list(request):
-    return render(request,'board/list.html')
+    qs = Board.objects.all(){bgrop}
+    context = {'list':qs}
+    return render(request,'board/list.html',context)
