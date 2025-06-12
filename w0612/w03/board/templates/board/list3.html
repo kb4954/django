@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='csrf-token' content='{{csrf_token}}'>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>form게시판</title>
+    <style>
+        table{margin:10px auto;width:1200px;}
+        table,th,td{border:1px solid black; border-collapse:collapse;}
+        th,td{height:40px; text-align:center;  }
+        textarea{width:300px height:100px;  }
+    </style>
+</head>
+<body>
+    <script>
+        $(function(){
+            $('.writeBtn').click(function(){
+                alert("글쓰기를 진행합니다.")
+                let id = $(".id").val();
+                let btitle = $(".btitle").val();
+                let bcontent = $(".bcontent").val();
+                cToken=$('meta[name="csrf-token"]').attr('bcontent');
+                console.log("넘어온 데이터 : ", id, btitle, bcontent,cToken); // 데이터 잘넘어오는지 확인 후 ajax에 보내기
+
+                $.ajax({
+                    url:'/ajaxdata/bwrite/',
+                    type='post',
+                    headers:{'X-CSRFToken':cToken},
+                    data:{'id':id,'btitle':btitle,'bcontent':bcontent},
+                    success: function(data){
+                        alert('성공');
+                        console.log(data);
+
+                        // 태그추가
+                        let hdata=``;
+                        hdata += `<tr>`;
+                        hdata += `<td>${data.board[0].bno}</td>`;
+                        hdata += `<td>${data.board[0].btilte}</td>`;
+                        hdata += `<td>${data.board[0].id}</td>`;
+                        hdata += `<td>${data.board[0].bhit}</td>`;
+                        hdata += `<td>${data.board[0].bdate}</td>`;
+                        hdata += `</tr>`;
+                        $('#tbody').prepend(hdata);
+                        // 빈공백처리 
+                        $('.id').val()
+                        $('.btitle').val()
+                        $('.bcontent').val()
+                                        
+                    
+
+                    },
+                    error:function(){
+                        alert('실패');
+                    }
+
+                });
+
+
+
+            });
+
+        });
+    </script>
+    {% comment %} <script>
+        $(function(){
+            // 페이지를 열자마자 ajax을 보냄
+            cToken = $('meta[name="csrf-token"]').attr('content')
+            $.ajax({
+                url: '/board/ajax3/',
+                type: 'post',
+                headers:{'X-CSRFToken':cToken},
+                data:{'sampleId':'testaaa'},
+                success:function(data){
+                    alert('성공')
+                    console.log(data)
+                    console.log("list fields ",data.list.fields)
+                    console.log("list fields[0] ",data.list.fields[0])
+                },
+                error:function(){
+                    alert('실패');
+                };                
+
+
+
+
+            });//ajax 선언 
+            
+            }); // ajax 선언
+            </script> {% endcomment %}
+            
+
+        <h2><a href='/'>3. 폼 데이터-ajax</a></h2>
+            <label>아이디</label>
+            <input type='text' name='id' class='id'><br>
+            <label>제목</label>
+            <input type='text' name='btitle' class='btitle'><br>
+            <label>내용</label>
+            <textarea name='bcontent' class='bcontent'></textarea><br>
+            <input type='button' class='writeBtn' value='전송'>
+        </form>
+        <table>
+            <colgroup>
+                <col width='12%'>
+                <col width='*'>
+                <col width='12%'>
+                <col width='12%'>
+                <col width='12%'>
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>조회수</th>
+                <th>작성일</th>
+            </tr>
+            <tbody id='tbody'>
+                {% for board in list %}
+                <tr>
+                    <td>{{board.bno}}</td>
+                    <td>{{board.btitle}}</td>
+                    <td>{{board.id}}</td>
+                    <td>{{board.bhit}}</td>
+                    <td>{{board.bdate|date:'Y-m-d H:i:s'}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</body>
+</html>
