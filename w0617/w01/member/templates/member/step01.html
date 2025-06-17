@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+
+	<!-- GNB -->
+	<div id="gnb">
+		
+		<div id="top">
+			<ul>
+				<li class="brand t1"><a href="#" id="topNavi1">JARDIN’s BRAND</a>
+					<ul id="topSubm1">
+						<li><a href="#">클래스</a></li>
+						<li><a href="#">홈스타일 카페모리</a></li>
+						<li><a href="#">드립커피백</a></li>
+						<li><a href="#">카페리얼 커피</a></li>
+						<li><a href="#">오리지널커피백</a></li>
+						<li><a href="#">카페리얼 음료</a></li>
+						<li><a href="#">마일드커피백</a></li>
+						<li><a href="#">워터커피</a></li>
+						<li><a href="#">카페포드</a></li>
+						<li><a href="#">모히또파티</a></li>
+						<li><a href="#">테이크아웃 카페모리</a></li>
+						<li><a href="#">포타제</a></li>
+					</ul>
+				</li>
+				<li class="t2"><a href="#" id="topNavi2">원두</a>
+					<ul id="topSubm2">
+						<li><a href="#">클래스</a></li>
+						<li><a href="#">로스터리샵</a></li>
+						<li><a href="#">커피휘엘</a></li>
+						<li><a href="#">산지별 생두</a></li>
+					</ul>
+				</li>
+				<li class="t1"><a href="#" id="topNavi3">원두커피백</a>
+					<ul id="topSubm3">
+						<li><a href="#">드립커피 로스트</a></li>
+						<li><a href="#">오리지널커피백</a></li>
+						<li><a href="#">마일드커피백</a></li>
+					</ul>
+				</li>
+				<li class="t2"><a href="#" id="topNavi4">인스턴트</a>
+					<ul id="topSubm4">
+						<li><a href="#">까페모리</a></li>
+						<li><a href="#">홈스타일카페모리</a></li>
+						<li><a href="#">포타제</a></li>
+					</ul>
+				</li>
+				<li class="t1"><a href="#" id="topNavi5">음료</a>
+					<ul id="topSubm5">
+						<li><a href="#">까페리얼</a></li>
+						<li><a href="#">워터커피</a></li>
+						<li><a href="#">모히또</a></li>
+					</ul>
+				</li>
+				<li class="t2"><a href="#" id="topNavi6">커피용품</a>
+					<ul id="topSubm6">
+						<li><a href="#">종이컵</a></li>
+						<li><a href="#">커피필터</a></li>
+						<li><a href="#">머신 등</a></li>
+					</ul>
+				</li>
+				<li class="t1"><a href="#" id="topNavi7">선물세트</a></li>
+				<li class="t2"><a href="#" id="topNavi8">대량구매</a></li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">initTopMenu();</script>
+	</div>
+	<!-- //GNB -->
+
+	<!-- container -->
+	<div id="container">
+
+		<div id="location">
+			<ol>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">MEMBERSHIP</a></li>
+				<li class="last">회원가입</li>
+			</ol>
+		</div>
+		
+		<div id="outbox">		
+			<div id="left">
+				<div id="title2">MEMBERSHIP<span>멤버쉽</span></div>
+				<ul>	
+					<li><a href="#" id="leftNavi1">로그인</a></li>
+					<li><a href="#" id="leftNavi2">회원가입</a></li>
+					<li><a href="#" id="leftNavi3">아이디/<span>비밀번호 찾기</span></a></li>
+					<li><a href="#" id="leftNavi4">회원약관</a></li>
+					<li><a href="#" id="leftNavi5">개인정보<span>취급방침</span></a></li>
+					<li class="last"><a href="#" id="leftNavi6">이메일무단<span>수집거부</span></a></li>
+				</ul>			
+			</div><script type="text/javascript">initSubmenu(2,0);</script>
+
+
+			<!-- contents -->
+			<div id="contents">
+				<div id="member">
+					<h2><strong>회원가입</strong><span>회원으로 가입하시면 보다 더 다양한 혜택을 누리실 수 있습니다.</span></h2>
+					
+					<!-- STEP -->
+					<div class="stepWrap">
+						<div class="step stepon">
+							<p class="web">STEP 01</p>
+							<p class="txt">실명확인</p>
+							<p class="ck"><img src="/static/images/bg/bg_step.png" alt="현재위치" /></p>
+						</div>
+
+						<div class="step">
+							<p class="web">STEP 02</p>
+							<p class="txt">약관 동의</p>
+						</div>
+
+						<div class="step">
+							<p class="web">STEP 03</p>
+							<p class="txt"><span>회원정보</span> <span>입력</span></p>
+						</div>
+
+						<div class="step">
+							<p class="web">STEP 04</p>
+							<p class="txt"><span>회원가입</span> <span>완료</span></p>
+						</div>
+					</div>
+					<!-- //STEP -->
+						
+
+					<div class="alertBox">
+						<ul>
+							<li>회원님의 실명확인 및 가입 여부를 확인하는 절차입니다.</li>
+							<li>회원님의 개인 정보 보호를 위해 실명확인을 실시하고 있습니다.</li>
+						</ul>
+					</div>
+					<!-- 실명확인 -->
+                    <h3>실명확인 조회</h3>
+                    <div class="checkDiv">
+                        <table summary="실명확인 조회" class="checkTable" border="1" cellspacing="0">
+                            <caption>실명확인 조회</caption>
+                            <colgroup>
+                            <col width="22%" class="tw30" />
+                            <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><span>이메일주소 입력</span></th>
+                                    <td>
+                                        <ul class="pta">
+                                            <li class="or10"><input type="text" class="w186" /></li>
+                                            <li><a href="#" class="nbtnMini iw56">전송</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><span>전송번호 입력</span></th>
+                                    <td>
+                                        <ul class="pta">
+                                            <li class="or10"><input type="text" class="w186" disabled /></li>
+                                            <li><a href="#" class="nbtnMini iw56">확인</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+					<!-- Btn Area -->
+					<div class="btnAreaCenter">
+						<a href="/member/step02/" class="gbtn">휴대폰인증</a></li>
+					</div>
+					<!-- //Btn Area -->
+
+
+				</div>
+			</div>
+			<!-- //contents -->
+
+
+		</div>
+	</div>
+	<!-- //container -->
+
+
+
+
+	<div id="footerWrap">
+		<div id="footer">
+			<div id="fnb">
+				<ul>
+					<li class="left"><a href="#">개인정보취급방침</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li class="left"><a href="#">이메일무단수집거부</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li class="left brand"><a href="#">쟈뎅 브랜드 사이트</a></li>
+				</ul>
+			</div>
+			
+			<div id="finfo">
+				<div id="flogo"><img src="/static/images/txt/flogo.gif" alt="JARDIN THE COFFEE CREATOR, SINCE 1984" /></div>
+				<address>
+					<ul>
+						<li>㈜쟈뎅</li>
+						<li>대표자 윤영노</li>
+						<li class="tnone">주소 서울시 강남구 논현동 4-21번지 영 빌딩</li>
+						<li class="webnone">소비자상담실 02)546-3881</li>
+						<li>사업자등록번호 211-81-24727</li>
+						<li class="tnone">통신판매신고 제 강남 – 1160호</li>
+						<li class="copy">COPYRIGHT © 2014 JARDIN <span>ALL RIGHTS RESERVED.</span></li>
+					</ul>
+				</address>
+
+				<div id="inicis"><img src="/static/images/ico/ico_inicis.png" alt="이니시스 결제시스템" /></div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+</div>
+</body>
+</html>
+{% endblock content%}
