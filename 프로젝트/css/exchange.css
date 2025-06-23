@@ -1,0 +1,217 @@
+nav{
+    /*border: 1px solid black;*/
+    display: flex;
+}
+.left_side{
+    width: 192px;
+    height:622px;
+    /*border: 1px solid black;*/
+    margin: 247px 0px 0px; 
+    
+    
+}
+.main{
+    width: 1137px;
+    height: auto ;
+    /*border: 1px solid black;*/
+}
+.category{
+    color:#2d7868;
+    /* border: 1px solid red;*/
+    width: 191px;
+    height: 500px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+.icon{display: flex;}
+.icon i{margin-right: 10px; margin-top: 5px;}
+.checked{
+    border-top-right-radius:10px;
+    /*line-height: 45px;*/
+    width: 135px;
+    height: 30px;
+    background-color:#2d7868;
+    color: white;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+
+
+.category li{margin-bottom: 16px; }
+
+.review{
+    width: 92px;
+    height: 10px;
+    /* border: 1px solid blue;*/
+    position: absolute;
+    bottom: 3px;
+    left: -5px;
+    background-color: #e0ff00;
+    border-top-right-radius: 4px;
+}
+.inform{
+    width: 191px;
+    height: 127px;
+    text-align: justify;
+    color:#2d7868;
+}
+.inform li{
+    margin-bottom: 12px;
+}
+.user_info{
+    width: 1125px;
+    height: 80px;
+
+    margin: 82px 0 82px;
+    
+    
+}
+.profile_name{
+    font-weight: 600;
+    
+}
+.nickname{
+    /* border: 1px solid black;*/
+    width: 345px; 
+    height: 60px; 
+    font-size: 40px;
+}
+span{color:#2d7868;}
+/*.user_name{width: 60px; 
+    height: 30px; 
+    font-size: 20px;
+    margin: 0px 0px 7px; 
+    line-height: 30px;
+    padding-top: 20px;
+    
+}*/
+
+.bookshelves{
+    width: 1125px;
+    height: auto;
+    /*border: 1px solid black;*/
+
+}
+.header-container{
+    width: 1125px;
+    height: 40px;
+    /*border: 1px solid black;*/
+    display: flex;
+}
+.tap-list{
+    width:auto;
+    height: 40px;
+    align-items: center;
+    /*border: 1px solid black;*/
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+}
+.tap-list li{
+    width: 173PX;
+    height: 40px;
+    /* background-color: #e6e6e6; */
+    font-size: 13px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.clicked{
+    width:173px;
+    height: 40px;
+    /* margin-left: 10px; */
+    font-size: 24px;
+    min-width: 0;
+    font-weight: 700;
+    line-height: 30px;
+    background-color: #2d7868;
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+    border-top-right-radius: 10px;
+}
+.fa-chevron-down{
+    font-size: 24px; 
+    margin-top: 5px; 
+    margin-left: 40px;
+}
+.paginator{
+    width:1106px ;
+    height: 36px;
+    text-align: center;
+    margin-top: 20px;
+    color: #999;
+    /* border: 1px solid black;*/
+}
+.numbers{
+    width: 15px;
+    margin: 0px 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+}
+.button{
+    padding: 12px 0px;
+}
+
+
+/* 내 그룹 */
+.bookbox{
+    width: 550px;
+    height: 200px;
+    border: 1px solid #ccc; /* 연한 회색 테두리 */
+    border-radius: 8px;     /* 모서리를 살짝 둥글게 */
+    /*box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);*/
+    margin-right: 10px;
+    display: flex;
+    
+}
+.bookbox_cover{
+    width: 200px;
+    height: 200px;
+    /*border: 1px solid black;*/
+    display: flex;
+    position: relative;
+
+}
+.bookbox_cover img{
+    margin: 0 auto;
+}
+.booktitle{
+    margin: 20px 0px 0px;
+    font-size: 18px;
+    font-weight: 600;
+    display: -webkit-box;
+    max-height: 48px;
+    line-height: 24px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.bookauthor{
+    margin-top: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.my_group{
+    display: flex;
+    flex-wrap: wrap;
+}
+.fa-arrow-right-from-bracket{
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: -345px;
+    color: #2d7868;
+}
+
+
+
+

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e1869b8eb9.js" crossorigin="anonymous"></script>
+    <title>정보수정</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap'); 
+    *{margin: 0px; padding: 0px; text-decoration: none;
+        list-style: none;
+    }  
+    .noto-sans{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    }
+    html, body {
+        height: 100%;
+    }
+    .page {
+        max-width: 1520px;
+        margin: 0 auto;
+        min-height: 100vh;
+    }
+
+    header {
+    max-width: 1520px;
+    margin: 0 auto;
+    height: 83px;
+    /*border: 1px solid black;*/
+    padding-top: 20px;
+    }
+
+    .main_header {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+    }
+
+    .logo {
+      width: 80px;
+      height: 25px;
+      /*border: 1px solid black;*/
+    }
+
+    .button-list-category {
+        margin: 0 auto;
+        width: 900px;
+        height: 20px;
+        /*border: 1px solid black;*/
+        display: flex;
+        gap: 10px;
+    }
+    
+    .button-list-category li {
+        list-style: none;
+        font-size: 13px;
+        font:black;
+        margin-right: 20px;
+    }
+
+    .gnb {
+        width: 303px;
+        height: 20px;
+        display: flex;
+        gap: 20px;
+        margin-left: auto;
+        /*border: 1px solid black;*/
+    }
+    .gnb li{
+        font-size: 13px;
+        font: black;
+
+    }
+    .gnb a {
+      text-decoration: none;
+    }
+    nav{
+        /*border: 1px solid black;*/
+        display: flex;
+    }
+    .left_side{
+        width: 192px;
+        height:622px;
+        /*border: 1px solid black;*/
+        margin: 247px 0px 0px; 
+    }
+    .main{
+        width: 1137px;
+        /*나중에 높이 수정 */
+        height: 1000px;
+        /*border: 1px solid black;*/
+    }
+    .category{
+        color: #2d7868;
+        /*border: 1px solid red;*/
+        width: 191px;
+        height: 500px;
+        text-align: justify;
+        margin-bottom: 10px;
+    }
+    .category li{margin-bottom: 16px;}
+
+    .icon{display: flex;}
+    .icon i{margin-right: 10px; margin-top: 5px;}
+    .category li{margin-bottom: 16px; }
+    .inform{
+        width: 191px;
+        height: 127px;
+        text-align: justify;
+    }
+    .inform_re{
+        border-top-right-radius:10px;
+        /*line-height: 45px;*/
+        width: 135px;
+        height: 30px;
+        background-color:#2d7868;
+        color: white;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    .inform li{
+        margin-bottom: 12px;
+    }
+    /*세션 부분 */
+    section{
+        flex: 1;
+        max-width: 1138px;
+        margin:245px 50px;
+        height: 500px;
+        /*border: 1px solid blue;*/
+    }
+    .field{
+        width:764 px;
+        height: 217px;
+        /*border: 1px solid red;*/
+    }
+    .profile_title{
+        display: flex;
+        align-items: center;
+        gap: 0 4px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 18px;
+        line-height: 25px;
+    }    
+    .field_description{
+        padding-bottom: 10px;
+        color: #999;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+    .sui_form_field{
+        display: block;
+        padding: 0px 0px 18px;
+        width: 764px;
+        height: 40px;
+        /* border: 1px solid black; */
+        padding-bottom: 18px;
+    }
+    .sui_form_field input{
+        width: 764px;
+        height: 40px;
+        appearance: none;
+        border-color: rgba(118, 118, 118, 0.3);
+        background-color: #e6e6e6;
+        border: none;
+        outline: none;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        padding: 0;
+        flex: 1;
+        display: flex;
+        position: relative;
+    }
+    .field button{
+        width: 160px;
+        cursor: pointer;
+        background-color: #282828;
+        border: 1px #282828 solid;
+        color: #fff;
+        height: 40px;
+        padding: 0 9px;
+        min-width: 140px;
+    }
+    .re_button{
+        text-align: right;
+        height: 40px;
+        width: 764px;
+    }
+    .sui_button{
+        height: 40px;
+        padding: 0 16px;
+        font-weight: 500;
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: 10px;
+        line-height: 20px;
+        border: none;
+    }
+    .btn_dark{
+        color: #fff;
+        background-color: #282828;
+    }
+
+    .email_inserted{
+        width:764 px;
+        height: 217px;
+        /*border: 1px solid green;  */    
+        padding-top: 20px;
+    }
+    .field_delete{
+        width: 764px;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    .button_mini{
+        height: 28px;
+        padding: 0 12px;
+        font-size: 11px;
+        margin-top: 20px;
+    }
+    .button_disabled{
+        background-color: #e6e6e6;
+        color: #999;
+    }
+    .field_account_delete{
+        width: 75px;
+        height: 25px;
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    .field_description_delete{
+        padding: 0px 0px 13px;
+        color: #999;
+    }
+</style>
+<body>
+    <div class="page">
+        <header>
+            <div class="main_header">
+                <div class="logo">
+                    <p>꼬북꼬북</p>
+                    <img src="">
+                </div>
+                <div class="button-list-category">
+                    <i class="fa-solid fa-bars"></i>
+                    <li class="list_category"><a href="">카테고리</a></li>
+                    <li class="buk-ticket"><a href="">교환독서</a></li>
+                    <li class="ng-star-inserted"><a href="">검색</a></li>
+                </div>
+                <div class="gnb">
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                    
+                </div>
+            </div>
+        </header>
+        <nav>
+            <div class="left_side">
+                <ul class="category">
+                    <div class="icon">
+                       <li><i class="fa-solid fa-book"></i>내가 쓴 리뷰</li>
+                    </div>
+                    <div class="icon">
+                        <li><i class="fa-solid fa-book-bookmark"></i>북마크</li>
+                    </div>
+                    <div class="icon">
+                        <li><i class="fa-solid fa-rotate"></i>교환독서</li>
+                    </div>
+                </ul>
+                <ul class="inform">
+                    <li><a href=""><i class="fa-solid fa-user-lock"></i> 차단한 사용자 </a></li>
+                    <li class="inform_re">정보수정/계정삭제</li>
+                </ul>
+            </div>
+            <div class="main">
+                <section>
+                    <div class="field">
+                        <h2 class="profile_title">기본정보</h2>
+                        <p class="field_description"> 이름, 휴대폰 번호는 아래 [변경] 버튼을 눌러 본인 인증 시에 변경이 가능합니다. </p>
+                        <div class="sui_form_field">
+                            <input type="text" >
+                        </div>
+                        <div class="sui_form_field">
+                            <input type="text" >
+                        </div>
+                        <div class="re_button">
+                            <button class="sui_button btn_dark">변경하기</button>
+                        </div>
+                    </div>
+                    <div class="email_inserted">
+                        <h2 class="profile_title" style="padding-bottom: 10px;">이메일</h2>
+                        <div class="sui_form_field">
+                            <input type="text" >
+                        </div>
+                        <div class="sui_form_field">
+                            <input type="text" >
+                        </div>
+                        <div class="re_button">
+                            <button class="sui_button button_disabled">이메일 변경하기</button>
+                        </div>
+                        <div class="field_delete">
+                            <div class="field_title_delete">
+                                <p class="field_account_delete">계정삭제</p>
+                                <p class="field_description_delete">회원님의 계정의 모든 데이터를 영구적으로 삭제합니다. 한번 삭제된 계정은 복구가 불가능 합니다.</p>
+                            </div>
+                            <div class="button_delete">
+                                <button class="sui_button button_mini">계정삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
