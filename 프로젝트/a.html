@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {font-family: 'Noto Sans KR', sans-serif;}
+
+  * {margin: 0; padding: 0; box-sizing: border-box; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;}
+
+  input {
+    color: inherit; 
+    font-family: inherit; 
+    letter-spacing: inherit; 
+    appearance: none; 
+    background: none; 
+    border: 0; 
+    box-shadow: none; 
+    border-radius: 0; 
+    padding: 0; 
+    margin: 0;
+  }
+    
+           input:focus-within, textarea:focus-within{
+               outline:none
+            }
+            
+            .inputWrap{
+                padding:10px 15px;
+                border:1px solid gray;
+                border-radius: 10px;
+                width:700px;
+                display:flex;
+                align-items:flex-start;
+            }
+            
+        </style> 
+    
+                            <div>
+                            <label for="title_inq">제목<span>*</span></label>
+                            <div class="inputWrap"><input type="text" id="title_inq" placeholder="제목을 입력해 주세요."></div>
+                        </div>
+    
+</body>
+</html>
